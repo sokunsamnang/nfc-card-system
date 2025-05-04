@@ -1,0 +1,312 @@
+{
+    "info": {
+        "name": "Digital Business Card API",
+        "description": "API endpoints for the Digital Business Card system",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "description": "User authentication endpoints",
+            "item": [
+                {
+                    "name": "Signup",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"password123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/auth/signup",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "auth", "signup"]
+                        },
+                        "description": "Register a new user"
+                    }
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"password123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/auth/login",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "auth", "login"]
+                        },
+                        "description": "Login and get JWT token"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Profile",
+            "description": "Profile management endpoints",
+            "item": [
+                {
+                    "name": "Get Profile",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "x-auth-token",
+                                "value": "{{auth_token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/profile",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "profile"]
+                        },
+                        "description": "Get current user's profile"
+                    }
+                },
+                {
+                    "name": "Create Profile",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-auth-token",
+                                "value": "{{auth_token}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"John Doe\",\n    \"title\": \"Software Engineer\",\n    \"company\": \"Tech Company Inc.\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/profile",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "profile"]
+                        },
+                        "description": "Create a new profile"
+                    }
+                },
+                {
+                    "name": "Update Profile",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-auth-token",
+                                "value": "{{auth_token}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"John Doe\",\n    \"title\": \"Senior Software Engineer\",\n    \"company\": \"Tech Company Inc.\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/profile",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "profile"]
+                        },
+                        "description": "Update user profile"
+                    }
+                },
+                {
+                    "name": "Upload Profile Photo",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "x-auth-token",
+                                "value": "{{auth_token}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "photo",
+                                    "type": "file",
+                                    "src": []
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/profile/photo",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "profile", "photo"]
+                        },
+                        "description": "Upload profile photo"
+                    }
+                },
+                {
+                    "name": "Add Contact Link",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-auth-token",
+                                "value": "{{auth_token}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"type\": \"email\",\n    \"url\": \"john.doe@example.com\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/profile/contact",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "profile", "contact"]
+                        },
+                        "description": "Add contact link to profile"
+                    }
+                },
+                {
+                    "name": "Remove Contact Link",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "x-auth-token",
+                                "value": "{{auth_token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/profile/contact/{{contact_link_id}}",
+                            "host": ["{{base_url}}"],
+                            "path": [
+                                "api",
+                                "profile",
+                                "contact",
+                                "{{contact_link_id}}"
+                            ]
+                        },
+                        "description": "Remove contact link from profile"
+                    }
+                },
+                {
+                    "name": "Add Social Link",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-auth-token",
+                                "value": "{{auth_token}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"platform\": \"LinkedIn\",\n    \"url\": \"https://linkedin.com/in/johndoe\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/profile/social",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "profile", "social"]
+                        },
+                        "description": "Add social link to profile"
+                    }
+                },
+                {
+                    "name": "Remove Social Link",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "x-auth-token",
+                                "value": "{{auth_token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/profile/social/{{social_link_id}}",
+                            "host": ["{{base_url}}"],
+                            "path": [
+                                "api",
+                                "profile",
+                                "social",
+                                "{{social_link_id}}"
+                            ]
+                        },
+                        "description": "Remove social link from profile"
+                    }
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    "// Automatically save the auth token from login responses",
+                    "if (pm.response.code === 200 || pm.response.code === 201) {",
+                    "    try {",
+                    "        const jsonResponse = pm.response.json();",
+                    "        if (jsonResponse.token) {",
+                    "            pm.environment.set('auth_token', jsonResponse.token);",
+                    "            console.log('Auth token saved to environment variable.');",
+                    "        }",
+                    "    } catch (e) {",
+                    "        console.error('No token found in response');",
+                    "    }",
+                    "}"
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:5000",
+            "type": "string"
+        },
+        {
+            "key": "auth_token",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "contact_link_id",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "social_link_id",
+            "value": "",
+            "type": "string"
+        }
+    ]
+}
