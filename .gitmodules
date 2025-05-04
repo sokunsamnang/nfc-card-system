@@ -1,11 +1,11 @@
 [submodule "nfc-card-client"]
 	path = nfc-card-client
-	url = ./nfc-card-client
+	url = https://github.com/sokunsamnang/nfc-card-client.git
 	
 [submodule "nfc-card-mobile"]
 	path = nfc-card-mobile
-	url = ./nfc-card-mobile
+	url = https://github.com/sokunsamnang/nfc-card-mobile.git
 	
 [submodule "server"]
 	path = server
-	url = ./server 
+	url = https://github.com/sokunsamnang/nfc-card-server.git
