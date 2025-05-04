@@ -1,0 +1,11 @@
+[submodule "nfc-card-client"]
+	path = nfc-card-client
+	url = ./nfc-card-client
+	
+[submodule "nfc-card-mobile"]
+	path = nfc-card-mobile
+	url = ./nfc-card-mobile
+	
+[submodule "server"]
+	path = server
+	url = ./server 

@@ -1,0 +1,116 @@
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.log
+*.swp
+*~
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-lock.yaml
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE - VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Jetbrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Testing
+coverage/
+.nyc_output
+
+# Build outputs
+dist/
+build/
+out/
+.out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# Mobile specific
+# iOS
+ios/Pods/
+ios/build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android
+android/app/build/
+android/build/
+android/.gradle/
+android/local.properties
+android/.idea/
+android/*.iml
+android/gradlew
+android/gradlew.bat
+android/gradle/
+android/captures/
+android/expoview/libs/ReactAndroid-temp/
+android/versioned-react-native/ReactAndroid
+android/versioned-react-native/ReactCommon
+android/ReactAndroid-temp/
+android/app/libs/ReactAndroid-temp/
+android/abiClasses/
+android/app/libs/
+android/keystores/debug.keystore
+
+# Expo
+.expo/
+web-build/
+
+# Temporary files
+tmp/
+temp/
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Misc
+.vercel
+.netlify
+.serverless/ 
